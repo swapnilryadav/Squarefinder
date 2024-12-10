@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>
+            find square
+        </title>
+       <style>
+        *{
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        body{
+                background-color: rgb(100, 71, 168);
+        }
+        h1{
+                background-color: rgb(247, 246, 252); color: rgb(3, 1, 14);
+            }
+        h2{
+                background-color: rgb(84, 84, 158);
+            }
+        
+       </style>  
+    </head>
+    <body>
+        <center>
+            <h1>FIND SQUARE</h1>
+            <form onsubmit="Find()">
+                <label>Enter your number: </label>
+         <input type="number" step="any" placeholder="Enter your number" id="num" />
+         <input type="submit" value="Find Square" />
+            </form>
+            <h2 id="msg"></h2>
+            <script>
+                function Find(){
+                    event.preventDefault();
+                    let num=document.getElementById("num");
+                    let msg=document.getElementById("msg");
+                     if(num.value===""){
+                        alert("please enter valid number");
+                        msg.innerHTML="";
+                        num.focus();
+                         return;
+                     }
+                     let n = parseFloat(num.value);
+                     let res=n*n;
+                     let ans="Square of " + n + " is "+ res.toFixed(2);
+                     msg.innerHTML=ans;
+                }
+            </script>
+        </center>
+    </body>
+</html>
